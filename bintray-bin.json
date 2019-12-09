@@ -1,0 +1,29 @@
+{
+    "package": {
+        "name": "benchgraph",
+        "repo": "bin",
+        "subject": "antoniosun",
+        "desc": "Visualizing Golang benchmark",
+        "website_url": "https://github.com/AntonioSun/benchgraph",
+        "issue_tracker_url": "https://github.com/AntonioSun/benchgraph/issues",
+        "vcs_url": "https://github.com/AntonioSun/benchgraph.git",
+        "licenses": ["MIT"],
+        "public_download_numbers": false
+    },
+
+    "version": {
+        "name": "$VERSION",
+        "desc": "Release $VERSION",
+        "released": "$DATE",
+        "gpgSign": false
+    },
+
+    "files": [{
+	"includePattern": "out/(.*)", "uploadPattern": "$VERSION/$1",
+        "matrixParams": {
+            "override": 1
+        }
+    }],
+
+    "publish": true
+}

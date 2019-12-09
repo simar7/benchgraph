@@ -20,6 +20,51 @@ Notable features available in this fork are:
   * Most importantly, the site said that it is very easy to embed the generated charts elsewhere, but I tried and was unable to. Having a local pure html file make porting the charts elsewhere much easier.
 - Allow the generated html file world-readable.
 
+### Download binaries
+
+- The latest binary executables are available under  
+https://bintray.com/antoniosun/bin/benchgraph, or directly under  
+https://bintray.com/version/files/antoniosun/bin/benchgraph  
+as the result of the Continuous-Integration process.
+- I.e., they are built during every git push, automatically by [travis-ci](https://travis-ci.org/), right from the source code, truly WYSIWYG.
+- Pick & choose the binary executable that suits your OS and its architecture. E.g., for Linux, it would most probably be the `benchgraph-linux-amd64` file. If your OS and its architecture is not available in the download list, please let me know and I'll add it.
+- You may want to rename it to a shorter name instead, e.g., `benchgraph`, after downloading it. 
+
+
+### Debian package
+
+Available at https://bintray.com/antoniosun/deb/benchgraph,  
+or directly at  https://dl.bintray.com/antoniosun/deb:
+
+```
+echo "deb [trusted=yes] https://dl.bintray.com/antoniosun/deb all main" | sudo tee /etc/apt/sources.list.d/antoniosun-debs.list
+sudo apt-get update
+
+sudo chmod 644 /etc/apt/sources.list.d/antoniosun-debs.list
+apt-cache policy benchgraph
+
+sudo apt-get install -y benchgraph
+```
+
+
+
+### Install Source
+
+To install the source code instead:
+
+```
+go get github.com/AntonioSun/benchgraph
+```
+
+
+### Author(s) & Contributor(s)
+
+- [Antonio SUN](https://github.com/AntonioSun)
+- @codingberg, the original author, and @miry, @tkanos & @simar7 as listed above
+
+_Powered by_ [**WireFrame**](https://github.com/go-easygen/wireframe),  [![PoweredBy WireFrame](https://github.com/go-easygen/wireframe/blob/master/PoweredBy-WireFrame-Y.svg)](http://godoc.org/github.com/go-easygen/wireframe), the _one-stop wire-framing solution_ for Go cli based projects, from start to deploy.
+
+All patches welcome. 
 
 ## Introduction
 In Golang we can analyze algorithm efficiency by writing benchmark functions and looking at execution time in ns/op. This task might become significantly hindered by increasing number of benchmark tests. One way to handle this is to visualize multiple benchmark results and track the function curve on a graph. The `benchgraph` reads benchmark output lines, prepare data for the graph, and upload data to remote server, which enables online view and html embedding. Graph turns out to be very handy in case of many algorithms that are tested against many arguments, especially if you are studing internal algorithm design.
