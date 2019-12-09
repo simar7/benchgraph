@@ -47,6 +47,8 @@ func writeLocallyData(data, title string) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	// allow world-readable (mode 0644)
+	tmpfile.Chmod(0644)
 
 	model := struct {
 		Title, Data string
