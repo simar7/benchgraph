@@ -1,7 +1,7 @@
 # benchgraph
 Visualization of Golang benchmark output using Google charts
 
-## Prefix - what special about this fork?
+## Prefix - what's special about this fork?
 
 The original `benchgraph` is not maintained anymore -- useful PRs like [#4](https://github.com/codingberg/benchgraph/pull/4) and [#5](https://github.com/codingberg/benchgraph/pull/5) have been sitting there for over a year without being picked. Thus people just forked away without bothering to send PRs back.
 
@@ -12,21 +12,20 @@ This fork tries to gather PRs from all different forks and consolidate them into
 
 Notable features available in this fork are:
 
-- Able to support sub benchmarks (by @miry)
-- Added go.mod (by @simar7)
-- Able to generate graphs locally (by @tkanos)
+- Able to support sub benchmarks (by [**@miry**](https://github.com/miry))
+- Added go.mod (by [**@simar7**](https://github.com/simar7))
+- Able to generate graphs locally (by [**@tkanos**](https://github.com/tkanos))
 - Makes the default behavior to generate graph locally, instead of sending to some server and publish them publicly. More explanations/reasons on this:
-  * Many people don't want to send their results somewhere else and publish publicly.
+  * Many people don't want to send their results somewhere else and publish them publicly.
   * Even for those who do, it might take well over several attempts to get a all-satisfying result. Publishing those intermediate test results will be a waste of the efforts and being force to do so doesn't make much sense.
   * The original tool has been out of maintenance for a while, and the publishing server might be gone in any minutes. So getting used to not using it might not be a bad idea.
-  * Most importantly, the site said that it is very easy to embed the generated charts elsewhere, but I tried and was unable to. Having a local pure html file make porting the charts elsewhere much easier.
+  * Most importantly, the site said that it is very easy to embed the generated charts elsewhere, but I tried and was unsuccessful. Having a local pure html file makes porting the charts elsewhere much easier.
 - Allow the generated html file world-readable.
 
 ### Download binaries
 
 - The latest binary executables are available under  
-https://bintray.com/antoniosun/bin/benchgraph, or directly under  
-https://bintray.com/version/files/antoniosun/bin/benchgraph  
+https://bintray.com/antoniosun/bin/benchgraph,   
 as the result of the Continuous-Integration process.
 - I.e., they are built during every git push, automatically by [travis-ci](https://travis-ci.org/), right from the source code, truly WYSIWYG.
 - Pick & choose the binary executable that suits your OS and its architecture. E.g., for Linux, it would most probably be the `benchgraph-linux-amd64` file. If your OS and its architecture is not available in the download list, please let me know and I'll add it.
@@ -62,7 +61,7 @@ go get github.com/AntonioSun/benchgraph
 ### Author(s) & Contributor(s)
 
 - [Antonio SUN](https://github.com/AntonioSun)
-- @codingberg, the original author, and @miry, @tkanos & @simar7 as listed above
+- [**@codingberg**](https://github.com/codingberg), the original author, and [**@miry**](https://github.com/miry), [**@tkanos**](https://github.com/tkanos), [**@simar7**](https://github.com/simar7) as listed above
 
 _Powered by_ [**WireFrame**](https://github.com/go-easygen/wireframe),  [![PoweredBy WireFrame](https://github.com/go-easygen/wireframe/blob/master/PoweredBy-WireFrame-Y.svg)](http://godoc.org/github.com/go-easygen/wireframe), the _one-stop wire-framing solution_ for Go cli based projects, from start to deploy.
 
