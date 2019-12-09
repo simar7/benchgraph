@@ -80,7 +80,7 @@ func main() {
 	flag.Var(&oBenchArgs, "oba", "comma-separated list of benchmark arguments")
 	title := flag.String("title", "Graph: Benchmark results in ns/op", "title of a graph")
 	apiUrl := flag.String("apiurl", "http://benchgraph.codingberg.com", "url to server api")
-	islocal := flag.Bool("local", false, "generates the response locally")
+	publish := flag.Bool("publish", false, "publish the response publicly")
 	flag.Parse()
 
 	var skipBenchNamesParsing, skipBenchArgsParsing bool
@@ -151,7 +151,7 @@ func main() {
 
 	var graphUrl string
 	var err error
-	if !*islocal {
+	if *publish {
 		fmt.Println("Waiting for server response ...")
 		graphUrl, err = uploadData(*apiUrl, string(data), *title)
 	} else {

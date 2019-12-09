@@ -13,6 +13,11 @@ Notable features available in this fork are:
 - Able to support sub benchmarks (by @miry)
 - Added go.mod (by @simar7)
 - Able to generate graphs locally (by @tkanos)
+- Makes the default behavior to generate graph locally, instead of sending to some server and publish them publicly. More explanations/reasons on this:
+  * Many people don't want to send their results somewhere else and publish publicly.
+  * Even for those who do, it might take well over several attempts to get a all-satisfying result. Publishing those intermediate test results will be a waste of the efforts and being force to do so doesn't make much sense.
+  * The original tool has been out of maintenance for a while, and the publishing server might be gone in any minutes. So getting used to not using it might not be a bad idea.
+  * Most importantly, the site said that it is very easy to embed the generated charts elsewhere, but I tried and was unable to. Having a local pure html file make porting the charts elsewhere much easier.
 
 
 ## Introduction
@@ -71,12 +76,12 @@ benchgraph -help
 Usage of benchgraph:
   -apiurl string
     	url to server api (default "http://benchgraph.codingberg.com")
-  -local
-      generates the response locally
   -oba value
     	comma-separated list of benchmark arguments (default [])
   -obn value
     	comma-separated list of benchmark names (default [])
+  -publish
+        publish the response publicly
   -title string
     	title of a graph (default "Graph: Benchmark results in ns/op")
 ```
