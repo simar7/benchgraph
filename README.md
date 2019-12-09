@@ -1,6 +1,20 @@
 # benchgraph
 Visualization of Golang benchmark output using Google charts
 
+## Prefix - what special about this fork?
+
+The original `benchgraph` is not maintained anymore -- useful PRs like [#4](https://github.com/codingberg/benchgraph/pull/4) and [#5](https://github.com/codingberg/benchgraph/pull/5) have been sitting there for over a year without being picked. Thus people just forked away without bothering to send PRs back.
+
+This fork tries to gather PRs from all different forks and consolidate them into a central location/tool.
+
+
+Notable features available in this fork are:
+
+- Able to support sub benchmarks (by @miry)
+- Added go.mod (by @simar7)
+- Able to generate graphs locally (by @tkanos)
+
+
 ## Introduction
 In Golang we can analyze algorithm efficiency by writing benchmark functions and looking at execution time in ns/op. This task might become significantly hindered by increasing number of benchmark tests. One way to handle this is to visualize multiple benchmark results and track the function curve on a graph. The `benchgraph` reads benchmark output lines, prepare data for the graph, and upload data to remote server, which enables online view and html embedding. Graph turns out to be very handy in case of many algorithms that are tested against many arguments, especially if you are studing internal algorithm design.
 
