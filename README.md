@@ -7,6 +7,8 @@ The original `benchgraph` is not maintained anymore -- useful PRs like [#4](http
 
 This fork tries to gather PRs from all different forks and consolidate them into a central location/tool.
 
+![Network graph](network_graph.png "Network graph")
+
 
 Notable features available in this fork are:
 
